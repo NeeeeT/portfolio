@@ -87,7 +87,7 @@
         resetShowBox();
         listBox.innerHTML = `
             <div class='list-box-ele'>作品名稱</div>
-            <div class='list-box-ele underline' id='Cathulhu'>網頁跨平台遊戲 - Cathulhu</div>
+            <div class='list-box-ele underline' id='Cathulhu'>網頁跨平台遊戲 - 貓蘇魯</div>
             <div class='list-box-ele underline' id='2020'>主題式網頁 - Goodbye 2020</div>
             <div class='list-box-ele underline' id='nccuVoice'>主題式網頁 - 臉皮有幾層</div>
         `;
@@ -159,27 +159,32 @@
             case 1:
                 part = '程式邏輯建構,Unity遊戲引擎使用';
                 date = '2020/3 ~ 2020/6';
-                discri = '由桃園青年局主辦的遊戲製作工作坊與專題發表，最終製作一款解謎3D遊戲的demo';
+                discri = '由桃園青年局主辦的遊戲製作工作坊與專題發表，最終製作一款解謎3D遊戲-「偽面」的demo';
+                url = 'https://gnn.gamer.com.tw/detail.php?sn=197744';
                 break;
             case 2:
                 part = '程式邏輯建構,Unity遊戲引擎使用';
                 date = '2020/8/29 ~ 2020/8/30';
                 discri = 'Game Jam是一個開發遊戲的有趣活動，參加者要在短時間內和其他陌生的遊戲開發者合作，最終製作一款2D合作平面遊戲';
+                url = 'https://itch.io/jam/faust-game-jam-2020/rate/745687';
                 break;
             case 3:
                 part = '網頁前端學習,遊戲原理與社群聚會';
                 date = '2020/7/9 ~ 2020/12/23';
                 discri = '參與2020「DIGI+ Talent跨域數位人才加速躍升計畫」擔任研習生，最終製作跨平台網頁遊戲。研習單位：創夢市集/網銀國際';
+                url = 'https://portfolio.digitalent.org.tw/10928-2/';
                 break;
             case 4:
                 part = '程式邏輯建構,Unity遊戲引擎使用';
                 date = '2020/12/12 ~ 2020/12/13';
-                discri = '參與2020由華梵大學「攝影與VR設計學系」和政治大學「數位內容學程」合辦的遊戲hackthon競賽，最終製作一款2D平面雙人競技遊戲';
+                discri = '參與2020由華梵大學「攝影與VR設計學系」和政治大學「數位內容學程」合辦的遊戲hackthon競賽，最終製作一款2D平面雙人競技遊戲「Full Moon Night」(第四組)';
+                url = ''
                 break;
             case 5:
                 part = '前端教學文件撰寫與技術開發';
                 date = '2021/2 ~ Now';
                 discri = '擔任「黑洞創造工作室」網頁前端實習生,協助網頁部門案子製作';
+                url = 'https://bkhole.com/';
                 break;
             default:
                 break;
@@ -188,6 +193,7 @@
             <div class='info-box-ele'>活動描述 : ${discri}</div>
             <div class='info-box-ele'>參與日期 : ${date}</div>
             <div class='info-box-ele'>負責部分 : ${part}</div>
+            <div class='info-box-ele underline' style='text-align:center'><a target='_blank' href="${url}">成果連結</a></div>
         `;
     }
 </script>
