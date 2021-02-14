@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+*{
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+body, html{
+    width: 100%;
+}
+.app{
+    width: 100%;
+    height: 100%;
+    background-color: #F2EDE9;
+}
+.header{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 10vh;
+}
+.header-ele{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+.header-ele:hover{
+    height: 100%;
+}
+.img1{
+    height: 90%;
+    background-image: url('../assets/about.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.img2{
+    height: 90%;
+    background-image: url('../assets/vrProj.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.img3{
+    height: 90%;
+    background-image: url('../assets/webGame.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.content{
+    width: 100%;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.list-box, .info-box{
+    width: 15%;
+    height: 95%;
+    background-color: #FAF5EF;
+    border: 1px solid #1d1c24;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.show-box-default{
+    font-size: 50px;
+}
+.show-box{
+    width: 65%;
+    height: 95%;
+    background-color: #FAF5EF;
+    border: 1px solid #1a1a1a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.self-ele{
+    color: #1a1a1a;
+    font-family: 'Noto Sans TC';
+    padding-top: 2em;
+    font-size: 18px;
+}
+.list-box-ele, .info-box-ele{
+    width: 80%;
+    color: #1a1a1a;
+    font-family: 'Noto Sans TC';
+    padding-top: 1em;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+    line-height: 30px;
+}
+.underline::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%,-49%);
+    border-bottom: 2px solid #000;
+}
+.underline:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+.info-box-ele{
+    text-align: left;
+}
+.pho{
+    border: 1px solid #1a1a1a;
+}
+.show-wrap{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

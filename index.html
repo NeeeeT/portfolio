@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鄭柏昇 | Nathan Cheng | 作品集</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/rwd.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="header-ele img1"></div>
+            <div class="header-ele img2"></div>
+            <div class="header-ele img3"></div>
+        </div>
+        <div class="content">
+            <div class="list-box"></div>
+            <div class="show-box">
+                <div class="show-box-default">請點擊作品或作者介紹</div>
+            </div>
+            <div class="info-box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let boxAbout = document.getElementsByClassName('img1')[0];
+    let boxVr = document.getElementsByClassName('img2')[0];
+    let boxOthers = document.getElementsByClassName('img3')[0];
+    let listBox = document.getElementsByClassName('list-box')[0];
+    let showBox = document.getElementsByClassName('show-box')[0];
+    let infoBox = document.getElementsByClassName('info-box')[0];
+    
+    boxAbout.addEventListener('click', ()=>{
+        resetShowBox();
+        listBox.innerHTML = `
+            <div class='list-box-ele'>About</div>
+            <div class='list-box-ele underline' id='self'>個人介紹</div>
+            <div class='list-box-ele underline' id='self-activities'>活動經歷</div>
+        `;
+        document.getElementById('self').addEventListener('click', ()=>{
+            showBox.innerHTML = `
+                <img src='./assets/pho.jpg' class='pho' width=200px height=200px>
+                <div class='self-ele'>名稱：鄭柏昇 Nathan Cheng</div>
+                <div class='self-ele'>主修：國立政治大學/中文系 2017-2021</div>
+                <div class='self-ele'>雙主修：國立政治大學/數位內容與科技學士學程 2019-2021</div>
+                <div class='self-ele'>專長：前端網頁設計/遊戲設計/互動特效</div>
+            `;
+            infoBox.innerHTML = `
+                <div class='info-box-ele underline' style='text-align:center;'><a href='https://www.facebook.com/nathan.neeeet/' target='_blank'>Facebook</a></div>
+                <div class='info-box-ele underline' style='text-align:center;'><a href='https://github.com/NeeeeT' target='_blank'>Github</a></div>
+                <div class='info-box-ele underline' style='text-align:center;'><a href='https://www.instagram.com/legiteeeeeen/' target='_blank'>Instagram</a></div>
+            `;
+        });
+        document.getElementById('self-activities').addEventListener('click', ()=>{
+            resetShowBox();
+            showBox.innerHTML = `
+                <div class='show-wrap'>
+                    <div class='list-box-ele underline' id='act1' style='text-align:center;'>2020 遊戲新星點亮計畫工作坊</div>
+                    <div class='list-box-ele underline' id='act2' style='text-align:center;'>2020 Faust Game Jam</div>
+                    <div class='list-box-ele underline' id='act3' style='text-align:center;'>2020 Digi+Talent 跨域數位人才加速躍升計畫</div>
+                    <div class='list-box-ele underline' id='act4' style='text-align:center;'>2020 Hcak Muffin 黑客鬆</div>
+                    <div class='list-box-ele underline' id='act5' style='text-align:center;'>2021 黑洞創造工作室 - 實習生</div>
+                </div>
+            `;
+            document.getElementById('act1').addEventListener('click', ()=>{showActInfo(1);});
+            document.getElementById('act2').addEventListener('click', ()=>{showActInfo(2);});
+            document.getElementById('act3').addEventListener('click', ()=>{showActInfo(3);});
+            document.getElementById('act4').addEventListener('click', ()=>{showActInfo(4);});
+            document.getElementById('act5').addEventListener('click', ()=>{showActInfo(5);});
+        });
+        document.getElementById
+    });
+    boxVr.addEventListener('click', ()=>{
+        resetShowBox();
+        listBox.innerHTML = `
+            <div class='list-box-ele'>作品名稱</div>
+            <div class='list-box-ele underline' id='room108'>NCCU Living Lab 9th - VR Project</div>
+        `;
+        document.getElementById('room108').addEventListener('click',()=>{
+            showInfo('room108');
+        });
+    });
+    boxOthers.addEventListener('click', ()=>{
+        resetShowBox();
+        listBox.innerHTML = `
+            <div class='list-box-ele'>作品名稱</div>
+            <div class='list-box-ele underline' id='Cathulhu'>網頁跨平台遊戲 - Cathulhu</div>
+            <div class='list-box-ele underline' id='2020'>主題式網頁 - Goodbye 2020</div>
+            <div class='list-box-ele underline' id='nccuVoice'>主題式網頁 - 臉皮有幾層</div>
+        `;
+        document.getElementById('Cathulhu').addEventListener('click',()=>{
+            showInfo('Cathulhu');
+        });
+        document.getElementById('2020').addEventListener('click',()=>{
+            showInfo('2020');
+        });
+        document.getElementById('nccuVoice').addEventListener('click',()=>{
+            showInfo('nccuVoice');
+        });
+    });
+    resetShowBox = ()=>{
+        showBox.innerHTML = `
+            <div class="show-box-default">請點擊作品或作者介紹</div>
+        `;
+        infoBox.innerHTML = ``;
+    };
+    showInfo = (name) =>{
+        let member, part, time, discri, url;
+        switch (name) {
+            case 'Cathulhu':
+                member = '鄭柏昇, 李玟誼, 鄭家欣, 陳伯祥, 李東炳';
+                part = '程式邏輯(Typescript)建構,遊戲引擎使用';
+                time = '2020/8 ~ 2020/12/23';
+                discri = '跨平台網頁遊戲,以LayaAir引擎開發,是一款主角配合邪神貓咪擊退敵人的2D橫向動作遊戲，可在任意設備點擊遊玩';
+                url = 'https://cathulhu-h5.web.app/';
+                showBox.innerHTML = `<img src='./assets/cat-preview.png' width=100% height=100%>`;
+                break;
+            case '2020':
+                member = '鄭柏昇, 江美樺, 朱世瑋';
+                part = '網頁前端、互動特效製作';
+                time = '2020/12 ~ 2021/1';
+                discri = '主題式網頁,收集身邊好友們的2020爛事,以垃圾桶與便條紙的概念呈現於網頁中,輔以天氣效果搭配觀看';
+                url = 'https://neeeet.github.io/GoodBye2020/';
+                showBox.innerHTML = `<img src='./assets/2020-preview.png' width=100% height=100%>`;
+                break;
+            case 'room108':
+                member = '鄭柏昇, 黃語婕, 林彥均, 楊岳錩, 廖家平';
+                part = 'Unity引擎使用,美術資源整合,Oculus VR設備串接,陣列圖集前處理';
+                time = '2020/11 ~ 2020/12';
+                discri = '以VR環境，搭建出虛擬美術館的空間，並模擬台灣國美館108室的環形螢幕，在其中播放圖集動畫';
+                url = 'https://www.youtube.com/embed/WxqqkVMHkAg';
+                showBox.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/WxqqkVMHkAg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                break;
+            case 'nccuVoice':
+                member = '鄭柏昇, 朱世瑋';
+                part = '網頁前端製作';
+                time = '2020/12 ~ 2020/12';
+                discri = '替朋友於「政大之聲第四屆聲音創作展 ｜ 光·音」參展時，以網頁和聲音互動呈現作品';
+                url = 'https://106101071.github.io/';
+                showBox.innerHTML = `<img src='./assets/nccuVoice-preview.png' width=100% height=100%>`;
+                break;
+            default:
+                break;
+        };
+        infoBox.innerHTML = `
+            <div class='info-box-ele'>製作人員 : ${member}</div>
+            <div class='info-box-ele'>個人負責部分 : ${part}</div>
+            <div class='info-box-ele'>完成時間 : ${time}</div>
+            <div class='info-box-ele'>專案描述 : ${discri}</div>
+            <div class='info-box-ele underline' style='text-align:center;'><a href='${url}' target='_blank'>作品連結</a></div>
+        `;
+    };
+    showActInfo = (id) =>{
+        let part, date, discri, url;
+        switch (id) {
+            case 1:
+                part = '程式邏輯建構,Unity遊戲引擎使用';
+                date = '2020/3 ~ 2020/6';
+                discri = '由桃園青年局主辦的遊戲製作工作坊與專題發表，最終製作一款解謎3D遊戲的demo';
+                break;
+            case 2:
+                part = '程式邏輯建構,Unity遊戲引擎使用';
+                date = '2020/8/29 ~ 2020/8/30';
+                discri = 'Game Jam是一個開發遊戲的有趣活動，參加者要在短時間內和其他陌生的遊戲開發者合作，最終製作一款2D合作平面遊戲';
+                break;
+            case 3:
+                part = '網頁前端學習,遊戲原理與社群聚會';
+                date = '2020/7/9 ~ 2020/12/23';
+                discri = '參與2020「DIGI+ Talent跨域數位人才加速躍升計畫」擔任研習生，最終製作跨平台網頁遊戲。研習單位：創夢市集/網銀國際';
+                break;
+            case 4:
+                part = '程式邏輯建構,Unity遊戲引擎使用';
+                date = '2020/12/12 ~ 2020/12/13';
+                discri = '參與2020由華梵大學「攝影與VR設計學系」和政治大學「數位內容學程」合辦的遊戲hackthon競賽，最終製作一款2D平面雙人競技遊戲';
+                break;
+            case 5:
+                part = '前端教學文件撰寫與技術開發';
+                date = '2021/2 ~ Now';
+                discri = '擔任「黑洞創造工作室」網頁前端實習生,協助網頁部門案子製作';
+                break;
+            default:
+                break;
+        }
+        infoBox.innerHTML = `
+            <div class='info-box-ele'>活動描述 : ${discri}</div>
+            <div class='info-box-ele'>參與日期 : ${date}</div>
+            <div class='info-box-ele'>負責部分 : ${part}</div>
+        `;
+    }
+</script>
