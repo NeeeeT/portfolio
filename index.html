@@ -10,9 +10,13 @@
 <body>
     <div class="app">
         <div class="header">
-            <div class="header-ele img1"></div>
+            <!-- <div class="header-ele img1"></div>
             <div class="header-ele img2"></div>
-            <div class="header-ele img3"></div>
+            <div class="header-ele img3"></div> -->
+            <div class="header-txt title1">About</div>
+            <div class="header-txt title2">VR proj</div>
+            <div class="header-txt title3">Web/Game proj</div>
+            <div class="header-txt title4">3D proj</div>
         </div>
         <div class="content">
             <div class="list-box"></div>
@@ -26,9 +30,10 @@
 </body>
 </html>
 <script>
-    let boxAbout = document.getElementsByClassName('img1')[0];
-    let boxVr = document.getElementsByClassName('img2')[0];
-    let boxOthers = document.getElementsByClassName('img3')[0];
+    let boxAbout = document.getElementsByClassName('title1')[0];
+    let boxVr = document.getElementsByClassName('title2')[0];
+    let boxOthers = document.getElementsByClassName('title3')[0];
+    let box3D = document.getElementsByClassName('title4')[0];
     let listBox = document.getElementsByClassName('list-box')[0];
     let showBox = document.getElementsByClassName('show-box')[0];
     let infoBox = document.getElementsByClassName('info-box')[0];
@@ -101,6 +106,30 @@
             showInfo('nccuVoice');
         });
     });
+    box3D.addEventListener('click', ()=>{
+        resetShowBox();
+        listBox.innerHTML = `
+            <div class='list-box-ele'>課程名稱</div>
+            <div class='list-box-ele underline' id='computer-animation'>電腦動畫</div>
+            <div class='list-box-ele underline' id='basic-animation'>基礎動畫設計</div>
+        `;
+        document.getElementById('computer-animation').addEventListener('click', ()=>{
+            infoBox.innerHTML = `
+                <div class='info-box-ele underline' style='text-align:center'>HW01</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
+            `;
+        })
+        document.getElementById('basic-animation').addEventListener('click', ()=>{
+            infoBox.innerHTML = `
+                <div class='info-box-ele underline' style='text-align:center'>HW01</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
+                <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
+            `;
+        })
+    })
     resetShowBox = ()=>{
         showBox.innerHTML = `
             <div class="show-box-default">請點擊作品或作者介紹</div>
