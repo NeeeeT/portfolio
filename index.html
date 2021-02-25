@@ -6,13 +6,12 @@
     <title>鄭柏昇 | Nathan Cheng | 作品集</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/rwd.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!-- <script src="./js/p5.js"></script> -->
 </head>
 <body>
     <div class="app">
         <div class="header">
-            <!-- <div class="header-ele img1"></div>
-            <div class="header-ele img2"></div>
-            <div class="header-ele img3"></div> -->
             <div class="header-txt title1">About</div>
             <div class="header-txt title2">VR proj</div>
             <div class="header-txt title3">Web/Game proj</div>
@@ -21,7 +20,8 @@
         <div class="content">
             <div class="list-box"></div>
             <div class="show-box">
-                <div class="show-box-default">請點擊作品或作者介紹</div>
+                <div class="show-box-default">Click Anywhere</div>
+                <!-- <canvas id='canvas-p5'></canvas> -->
             </div>
             <div class="info-box"></div>
             </div>
@@ -135,6 +135,7 @@
             <div class="show-box-default">請點擊作品或作者介紹</div>
         `;
         infoBox.innerHTML = ``;
+        new p5(setRain, showBox);
     };
     showInfo = (name) =>{
         let member, part, time, discri, url;
@@ -225,4 +226,73 @@
             <div class='info-box-ele underline' style='text-align:center'><a target='_blank' href="${url}">成果連結</a></div>
         `;
     }
+</script>
+
+<script>//for p5.js drawing
+let rain = [];
+let rainingNow = true;
+
+let setRain = (p) => {
+    p.setup = function (i) {
+        p.createCanvas(showBox.offsetWidth, showBox.offsetHeight);
+        p.frameRate(48);
+
+        for (i = 0; i < 100; i++) {
+            rain[i] = new Rain(p, p.random(50, showBox.offsetWidth), p.random(0, showBox    .offsetHeight));
+        }
+    }
+    p.draw = function () {
+        p.background('#e5e5e5');
+
+        //Check if it's raining or sunny
+        if (rainingNow == true) {
+            //background(100);
+            for (i = 0; i < rain.length; i++) {
+                rain[i].dropRain();
+                rain[i].splash();
+            }
+        }
+    }
+}
+function Rain(p,x,y){
+    this.x = x;
+    this.y = y;
+    // this.gravity = 9.8;
+    this.length = 20;
+    this.r = 0;
+    this.opacity = 200;
+
+
+    this.dropRain = function () {
+        p.fill('#666');
+        //rect(this.x, this.y,3,15);
+        p.ellipse(this.x, this.y, 1, this.length);
+        this.y = this.y + 6 //+ frameCount/60;
+        if (this.y > y) {
+            this.length = this.length - 5;
+        }
+        if (this.length < 0) {
+            this.length = 0;
+        }
+    }
+    this.splash = function () {
+        p.strokeWeight(2);
+        p.stroke(200, 200 / p.frameCount);
+        p.stroke(200, this.opacity);
+        p.noFill();
+        if (this.y > y) {
+            p.ellipse(this.x, y + 5, this.r * 5, this.r / 2);
+            this.r++;
+            this.opacity = this.opacity - 10;
+
+            //keep the rain dropping
+            if (this.opacity < 0) {
+                this.y = p.random(0, -100);
+                this.length = 20;
+                this.r = 0;
+                this.opacity = 200;
+            }
+        }
+    }
+}
 </script>
