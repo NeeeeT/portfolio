@@ -235,7 +235,8 @@ let rainingNow = true;
 let setRain = (p) => {
     p.setup = function (i) {
         p.createCanvas(showBox.offsetWidth, showBox.offsetHeight);
-        p.frameRate(48);
+        p.frameRate(60);
+        
 
         for (i = 0; i < 100; i++) {
             rain[i] = new Rain(p, p.random(50, showBox.offsetWidth), p.random(0, showBox    .offsetHeight));
