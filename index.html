@@ -33,7 +33,7 @@
     let boxAbout = document.getElementsByClassName('title1')[0];
     let boxVr = document.getElementsByClassName('title2')[0];
     let boxOthers = document.getElementsByClassName('title3')[0];
-    let box3D = document.getElementsByClassName('title4')[0];
+    // let box3D = document.getElementsByClassName('title4')[0];
     let listBox = document.getElementsByClassName('list-box')[0];
     let showBox = document.getElementsByClassName('show-box')[0];
     let infoBox = document.getElementsByClassName('info-box')[0];
@@ -67,7 +67,7 @@
                     <div class='list-box-ele underline' id='act2' style='text-align:center;'>2020 Faust Game Jam</div>
                     <div class='list-box-ele underline' id='act3' style='text-align:center;'>2020 Digi+Talent 跨域數位人才加速躍升計畫</div>
                     <div class='list-box-ele underline' id='act4' style='text-align:center;'>2020 Hcak Muffin 黑客鬆</div>
-                    <div class='list-box-ele underline' id='act5' style='text-align:center;'>2021 黑洞創造工作室 - 實習生</div>
+                    <div class='list-box-ele underline' id='act5' style='text-align:center;'>2021 黑洞創造工作室 - 網頁前端實習生</div>
                 </div>
             `;
             document.getElementById('act1').addEventListener('click', ()=>{showActInfo(1);});
@@ -106,31 +106,31 @@
             showInfo('nccuVoice');
         });
     });
-    box3D.addEventListener('click', ()=>{
-        resetShowBox();
-        listBox.innerHTML = `
-            <div class='list-box-ele'>課程名稱</div>
-            <div class='list-box-ele underline' id='computer-animation'>電腦動畫</div>
-            <div class='list-box-ele underline' id='basic-animation'>基礎動畫設計</div>
-        `;
-        document.getElementById('computer-animation').addEventListener('click', ()=>{
-            infoBox.innerHTML = `
-                <div class='info-box-ele underline' style='text-align:center'>HW01</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
-            `;
-        })
-        document.getElementById('basic-animation').addEventListener('click', ()=>{
-            infoBox.innerHTML = `
-                <div class='info-box-ele underline' style='text-align:center'>HW01</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
-                <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
-            `;
-        })
-    })
-    resetShowBox = ()=>{
+    // box3D.addEventListener('click', ()=>{
+    //     resetShowBox();
+    //     listBox.innerHTML = `
+    //         <div class='list-box-ele'>課程名稱</div>
+    //         <div class='list-box-ele underline' id='computer-animation'>電腦動畫</div>
+    //         <div class='list-box-ele underline' id='basic-animation'>基礎動畫設計</div>
+    //     `;
+        // document.getElementById('computer-animation').addEventListener('click', ()=>{
+        //     infoBox.innerHTML = `
+        //         <div class='info-box-ele underline' style='text-align:center'>HW01</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
+        //     `;
+        // })
+        // document.getElementById('basic-animation').addEventListener('click', ()=>{
+        //     infoBox.innerHTML = `
+        //         <div class='info-box-ele underline' style='text-align:center'>HW01</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW02(Unfinished)</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW03(Unfinished)</div>
+        //         <div class='info-box-ele underline' style='text-align:center'>HW04(Unfinished)</div>
+        //     `;
+        // })
+    // })
+    function resetShowBox(){
         showBox.innerHTML = `
             <div class="show-box-default">Click Anywhere!</div>
         `;
@@ -220,7 +220,7 @@
                 break;
         }
         infoBox.innerHTML = `
-            <div class='info-box-ele'>活動描述 : ${discri}</div>
+            <div class='info-box-ele'>描述 : ${discri}</div>
             <div class='info-box-ele'>參與日期 : ${date}</div>
             <div class='info-box-ele'>負責部分 : ${part}</div>
             <div class='info-box-ele underline' style='text-align:center'><a target='_blank' href="${url}">成果連結</a></div>
