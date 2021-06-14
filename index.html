@@ -83,9 +83,13 @@
         listBox.innerHTML = `
             <div class='list-box-ele'>作品名稱</div>
             <div class='list-box-ele underline' id='room108'>NCCU Living Lab 9th - VR Project</div>
+            <div class='list-box-ele underline' id='althea'>NCCU DCT 12th VR Game - Althea</div>
         `;
         document.getElementById('room108').addEventListener('click',()=>{
             showInfo('room108');
+        });
+        document.getElementById('althea').addEventListener('click',()=>{
+            showInfo('althea');
         });
     });
     boxOthers.addEventListener('click', ()=>{
@@ -163,6 +167,14 @@
                 discri = '以VR環境，搭建出虛擬美術館的空間，並模擬台灣國美館108室的環形螢幕，在其中播放圖集動畫';
                 url = 'https://www.youtube.com/embed/WxqqkVMHkAg';
                 showBox.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/WxqqkVMHkAg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                break;
+            case 'althea':
+                member = '鄭柏昇, 曾意晴, 陳姿伶, 黃曉柔, 黃汪琪';
+                part = 'Unity3D 2019.4.13f1、Oculus rift & Oculus intergration modified.';
+                time = '2020/10 ~ 2021/6';
+                discri = '關於逃脫與半解謎的VR遊戲，探索奇怪的中古莊園與打敗邪惡的領主吧!';
+                url = 'https://youtu.be/jw6SUBfr39A';
+                showBox.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jw6SUBfr39A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
                 break;
             case 'nccuVoice':
                 member = '鄭柏昇, 朱世瑋';
